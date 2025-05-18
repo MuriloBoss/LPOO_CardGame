@@ -163,8 +163,10 @@ public class CadastroCartaJD extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        //if(carta == null){
+        if (carta == null) {
             carta = new Carta();
+        }
+            
             carta.setNome(txtNome.getText().trim());
             carta.setCategoria((Categoria)cmbCategoria.getSelectedItem());
             carta.setAtaque(Integer.parseInt(txtAtaque.getText()));
