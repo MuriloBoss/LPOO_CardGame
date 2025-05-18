@@ -4,15 +4,16 @@
  */
 package control;
 
-/**
- *
- * @author muril
- */
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.*;
 import model.Carta;
+
+/**
+ *
+ * @author toazz
+ */
 public class PersistenciaJPA implements InterfaceBD {
 
     private EntityManager entity;

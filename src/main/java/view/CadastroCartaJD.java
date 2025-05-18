@@ -11,7 +11,7 @@ import model.Categoria;
  *
  * @author 20232pf.cc0007
  */
-public class CadastroCardaJD extends javax.swing.JDialog {
+public class CadastroCartaJD extends javax.swing.JDialog {
     Carta carta;
 
     public Carta getCarta() {
@@ -24,7 +24,7 @@ public class CadastroCardaJD extends javax.swing.JDialog {
     
     
     /**
-     * Creates new form CadastroCardaJD
+     * Creates new form CadastroCartaJD
      */
     
     public void loadCategorias(){
@@ -33,7 +33,7 @@ public class CadastroCardaJD extends javax.swing.JDialog {
             cmbCategoria.addItem(cat);
         }
     }
-    public CadastroCardaJD(java.awt.Frame parent, boolean modal) {
+    public CadastroCartaJD(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         loadCategorias();
@@ -191,20 +191,23 @@ public class CadastroCardaJD extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroCardaJD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCartaJD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroCardaJD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCartaJD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroCardaJD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCartaJD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroCardaJD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroCartaJD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastroCardaJD dialog = new CadastroCardaJD(new javax.swing.JFrame(), true);
+                CadastroCartaJD dialog = new CadastroCartaJD(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

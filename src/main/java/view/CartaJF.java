@@ -67,6 +67,11 @@ public class CartaJF extends javax.swing.JFrame {
         });
 
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnRemover.setText("Remover");
         btnRemover.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +121,7 @@ public class CartaJF extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        CadastroCardaJD telaCadastro = new CadastroCardaJD(this, true);
+        CadastroCartaJD telaCadastro = new CadastroCartaJD(this, true);
         telaCadastro.setVisible(true);
         Carta novaCarta = telaCadastro.getCarta();
 
@@ -150,6 +155,33 @@ public class CartaJF extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnRemoverActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+                Carta cartaSel = lstCartas.getSelectedValue();
+
+        if (cartaSel == null) {
+            JOptionPane.showMessageDialog(null, "Selecione uma Carta para editar");
+            return;
+        }
+
+        CadastroCartaJD telaCadastro = new CadastroCartaJD(this, true);
+        telaCadastro.setCarta(cartaSel);
+        telaCadastro.setVisible(true);
+
+        Carta cartaEditada = telaCadastro.getCarta();
+
+        if (cartaEditada != null) {
+            if (!jpa.conexaoAberta()) {
+                jpa = new PersistenciaJPA();
+            }
+            try {
+                jpa.persist(cartaEditada);
+            } catch (Exception ex) {
+                System.err.println("Erro ao editar carta");
+            }
+            loadCards();
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -11,10 +11,10 @@ import java.util.List;
  * @author muril
  */
 public class Jogador {
-    int id;
-    String nickname;
-    int level;
-    List<Carta> baralho;
+    private int id;
+    private String nickname;
+    private int level;
+    private List<Carta> baralho;
 
     public int getId() {
         return id;

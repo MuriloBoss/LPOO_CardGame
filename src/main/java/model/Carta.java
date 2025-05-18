@@ -4,39 +4,36 @@
  */
 package model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  *
- * @author muril
+ * @author murilo
  */
 @Entity
-@Table(name= "tbl_carta")
+@Table(name = "tbl_carta")
 public class Carta {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "car_id")
     private int id;
-    
+
     @Column(name = "car_nome", nullable = false)
     private String nome;
-    
-    @Column(name = "car_ataque", nullable = false)     
+
+    @Column(name = "car_ataque", nullable = false)
     private int ataque;
-    
+
     @Column(name = "car_defesa", nullable = false)
     private int defesa;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "car_categoria", nullable = true)
     private Categoria categoria;
-    
+
     @Column(name = "car_raridade", nullable = true)
-    private String raridade;
+    private int raridade;
 
     public int getId() {
         return id;
@@ -78,17 +75,16 @@ public class Carta {
         this.categoria = categoria;
     }
 
-    public String getRaridade() {
+    public int getRaridade() {
         return raridade;
     }
 
-    public void setRaridade(String raridade) {
+    public void setRaridade(int raridade) {
         this.raridade = raridade;
     }
-    
+
     @Override
     public String toString(){
-        return nome + " (" + categoria + ") A: " + ataque+ " - D: " + defesa;
+        return nome + " (" + categoria + "): A: " + ataque + " - D: " + defesa;
     }
-           
 }
